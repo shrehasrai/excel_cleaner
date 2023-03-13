@@ -124,8 +124,8 @@ print('remove special text from author cells ===> ', author_affiliation_special_
 
 df = convert_df(excel_name)
 
-df.columns = ["source_id", "manual_id", "article_title", "url", "authors", "author_affiliation", "abstract_text",
-              "date", "start_time", "end_time", "location", "session_title", "session_type", "category", "sub_category",
+df.columns = ["is_paid","source_id", "manual_id", "article_title", "url", "authors", "author_affiliation", "abstract_text",
+              "date", "start_time", "end_time", "location", "session_id", "news_type", "session_title", "session_type", "category", "sub_category",
               "disclosure"]
 df = clean_excel(df)
 
@@ -286,9 +286,9 @@ if group_by_author_replace.lower() != 'false':
 
 
 
-df = df[["source_id", "manual_id", "article_title", "url", "authors", "author_affiliation", "abstract_text",
-         "date", 'new_date', "start_time","new_start_time", "end_time","new_end_time", "location", "session_title",
-         "session_type", "category", "sub_category","disclosure"]]
+df = df[["is_paid","source_id", "manual_id", "article_title", "url", "authors", "author_affiliation", "abstract_text",
+              "date","new_date", "start_time", "new_start_time", "end_time","new_end_time", "location", "session_id","news_type", "session_title", "session_type",
+         "category", "sub_category", "disclosure"]]
 
 df = remove_str_nam(df)
 
